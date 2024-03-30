@@ -1,3 +1,4 @@
+// *******trinangle funtion*******
 function calculateTrinangleArea(){
     // get trinangle base value
     const baseField = document.getElementById('Trinangle-base');
@@ -18,7 +19,7 @@ function calculateTrinangleArea(){
     areaSpan.innerText = area;
    
 }
-
+// *******rectangle funtion*******
 function calculateRectangleArea(){
     // get rectangle width value
    const widthField = document.getElementById('Rectangle-width');
@@ -36,4 +37,37 @@ console.log(area);
 // show rectangle area
 const areaSpan = document.getElementById('Rectangle-area');
 areaSpan.innerText = area;
+}
+// *******parallel  funtion*******
+
+function calculateParallelogramArea(){
+   const height = getInputValue('parallelogram-height');
+console.log(height)
+   const length = getInputValue('parallelogram-length');
+   console.log(length)
+   const area = height * length;
+   setElementInnerText('parallelogram-area',area);
+
+}
+
+// ***********Ellipse funtion ******
+function calculateEllipseArea(){
+   const major = getInputValue('ellipse-major-radius');
+   const minor = getInputValue('ellipse-minor-radius');
+   const area = 3.14 * major * minor;
+setElementInnerText('ellipse-area',area);
+}
+
+// reuseble get input value field in number
+function getInputValue(fieldId){
+const inputField = document.getElementById(fieldId);
+const inputValueText = inputField.value;
+const value = parseFloat(inputValueText);
+return value;
+}
+
+// reuseble set span,p,div,
+function setElementInnerText(elementId,area){
+const element = document.getElementById(elementId);
+element.innerText = area;
 }
